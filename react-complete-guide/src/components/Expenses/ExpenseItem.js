@@ -3,6 +3,11 @@ import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 
 export default function ExpenseItem(props) {
+
+	const handleClick = () => {
+		
+	}
+
     return (
         <Card className="expense-item" >
 			<ExpenseDate date={props.expense.date} />
@@ -12,6 +17,7 @@ export default function ExpenseItem(props) {
                     RM{props.expense.amount}
                 </div>
             </div>
+			<button onClick={handleClick}>Change Title</button>
         </Card>
     );
 }
