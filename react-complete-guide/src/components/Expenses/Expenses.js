@@ -6,7 +6,7 @@ import "./ExpensesFilter";
 import ExpensesFilter from "./ExpensesFilter";
 
 export default function Expenses(props) {
-	const [year, setYear] = useState("2020");
+    const [year, setYear] = useState("2020");
 
     const filterByYear = (year) => {
         setYear(year);
@@ -15,11 +15,14 @@ export default function Expenses(props) {
     return (
         <div>
             <Card className="expenses">
-                <ExpensesFilter selectedYear={year} onFilterByYear={filterByYear} />
-                <ExpenseItem expense={props.expenses[0]} />
-                <ExpenseItem expense={props.expenses[1]} />
-                <ExpenseItem expense={props.expenses[2]} />
-                <ExpenseItem expense={props.expenses[3]} />
+                <ExpensesFilter
+                    selectedYear={year}
+                    onFilterByYear={filterByYear}
+                />
+                {props.expenses &&
+                    props.expenses.map((expense) => (
+                        <ExpenseItem key={expense.id} expense={expense} />
+                    ))}
             </Card>
         </div>
     );
