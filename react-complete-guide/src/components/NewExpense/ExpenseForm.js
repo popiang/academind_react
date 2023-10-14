@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ExpenseForm.css";
 
-export default function ExpenseForm({ onSaveExpenseData }) {
+export default function ExpenseForm({ onSaveExpenseData, onCancelClick }) {
     const [title, setTitle] = useState("");
     const [amount, setAmount] = useState("");
     const [date, setDate] = useState("");
@@ -11,7 +11,7 @@ export default function ExpenseForm({ onSaveExpenseData }) {
 
         const expenseData = {
             title,
-            amount,
+            amount: +amount,
             date: new Date(date),
         };
 
@@ -19,6 +19,10 @@ export default function ExpenseForm({ onSaveExpenseData }) {
         setTitle("");
         setAmount("");
         setDate("");
+    };
+
+    const handleCancelClick = () => {
+        onCancelClick(false);
     };
 
     return (
@@ -54,6 +58,7 @@ export default function ExpenseForm({ onSaveExpenseData }) {
                 </div>
             </div>
             <div className="new-expense__actions">
+                <button type="button" onClick={handleCancelClick}>Cancel</button>
                 <button type="submit">Add Expense</button>
             </div>
         </form>
