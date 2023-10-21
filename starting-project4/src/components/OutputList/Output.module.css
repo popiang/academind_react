@@ -1,0 +1,20 @@
+.list {
+	max-width: 500px;
+	margin: 10px auto;
+	/* background-color: bisque; */
+	list-style-type: none;
+	padding: 0;
+}
+
+.list li {
+	background-color: #fff;
+	margin-bottom: 5px;
+	padding: 1px 10px;
+	border-radius: 10px;
+}
+
+.list p {
+	border: 1px solid black;
+	padding: 4px;
+	/* margin: 5px; */
+}

@@ -1,0 +1,32 @@
+.input-form {
+	max-width: 500px;
+	border: 1px solid black;
+	border-radius: 8px;
+	padding: 15px;
+	margin: 50px auto;
+	background-color: #fff;
+}
+
+.input-form label,
+.input-form input {
+	display: block;
+}
+
+.input-form label {
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.input-form input {
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+.input-form button {
+	background-color: purple;
+	color: white;
+	padding: 5px 10px;
+	border: none;
+	cursor: pointer;
+}
